@@ -15,5 +15,10 @@
   "devDependencies": {
   "chai": "*",
   "mocha": "*"
+  },
+  "scripts": {
+    "lint": "jshint **.js",
+    "test": "mocha test/ test/rules",
+    "test:watch": "npm run test -- -w"
   }
 }
