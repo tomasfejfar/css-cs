@@ -7,7 +7,7 @@ describe('selector rule', function () {
         var failingAssert = function () {
             return false;
         };
-        var sucessfulAssert = function () {
+        var successfulAssert = function () {
             return true;
         };
 
@@ -29,16 +29,21 @@ describe('selector rule', function () {
         });
 
         it('should sucess with succesful asserts', function () {
-            var validate = selector([sucessfulAssert]);
+            var validate = selector([successfulAssert]);
             expect(validate('.test')).to.equal(true);
         });
 
 
         it('should fail if one assert fails', function () {
-            var validate = selector([sucessfulAssert, failingAssert]);
+            var validate = selector([successfulAssert, failingAssert]);
             expect(function () {
                 validate('.test')
             }).to.throw(Error);
+        });
+
+        it('should succeed if asserts suceed', function () {
+            var validate = selector([successfulAssert, successfulAssert]);
+            expect(validate('.test')).to.equal(true);
         });
 
 
