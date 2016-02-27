@@ -18,7 +18,6 @@
   },
   "scripts": {
     "lint": "jshint **.js",
-    "test": "mocha test/ test/rules",
-    "test:watch": "npm run test -- -w"
+    "test": "mocha test/ test/rule"
   }
 }
