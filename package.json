@@ -4,20 +4,20 @@
   "description": "CSS coding standard checker",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "jshint **.js",
+    "test": "mocha --compilers jsx:babel-register test/ test/rule"
   },
   "author": "Tomáš Fejfar",
   "license": "MIT",
   "dependencies": {
     "css": "^2.2.1",
     "yargs": "^4.2.0"
-  }, 
-  "devDependencies": {
-  "chai": "*",
-  "mocha": "*"
   },
-  "scripts": {
-    "lint": "jshint **.js",
-    "test": "mocha test/ test/rule"
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.4",
+    "babel-register": "^6.5.2",
+    "chai": "*",
+    "mocha": "*"
   }
 }
